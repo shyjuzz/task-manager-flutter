@@ -64,6 +64,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     return null;
                   },
                 ),
+                SizedBox(height: 16),
 
                 TextFormField(
                   controller: _passwordController,

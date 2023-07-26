@@ -20,6 +20,12 @@ class _LoginScreenState extends State<LoginScreen> {
     print('Logged in with email: $email');
   }
 
+  void _onLoginSuccess(BuildContext context) {
+    // Perform any login logic here
+    // If login is successful, navigate to the TaskListScreen
+    Navigator.pushNamed(context, '/taskList');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +66,10 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: _handleLogin,
+                  onPressed: () {
+                    // Simulate successful login for this example
+                    _onLoginSuccess(context);
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.orangeAccent, // Set background color to light orange
                     padding: EdgeInsets.symmetric(vertical: 16), // Increase button size
